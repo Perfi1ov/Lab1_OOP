@@ -2,6 +2,8 @@
 #include "struct.h"
 #include "func.h"
 
+using namespace std;
+
 void Print(Matrix matrix){
     Line* line, *head;
     Item* item;
@@ -20,9 +22,9 @@ void Print(Matrix matrix){
         }
         if (found==0){
             for(j=0;j<maxj;j++){
-                std::cout << "0 ";
+                cout << "0 ";
             }
-            std::cout << std::endl;
+            cout << endl;
         }else{
             for(j=0;j<maxj;j++){
                 item = line->head;
@@ -30,15 +32,15 @@ void Print(Matrix matrix){
                 while(item!=nullptr){
                     if (item->j == j){
                         found = 2;
-                        std::cout << item->value << " ";
+                        cout << item->value << " ";
                     }
                     item = item->next;
                 }
                 if(found!=2){
-                    std::cout << "0 ";
+                    cout << "0 ";
                 }
             }
-            std::cout << std::endl;
+            cout << endl;
         }
     }
 }
@@ -149,23 +151,23 @@ Matrix Input(Matrix matrix){
     Line* line, *head;
     val = 1;
     while(val!=0){
-        std::cout << "enter a value or 0 if there are no more items" << std::endl;
-        std::cin >> val;
+        cout << "enter a value or 0 if there are no more items" << endl;
+        cin >> val;
         if(val!=0){
-            std::cout << "enter line number" << std::endl;
-            std::cin >> i;
+            cout << "enter line number" << endl;
+            cin >> i;
             if(i>(matrix.line)-1){
                 do{
-                    std::cout << "try again" << std::endl;
-                    std::cin >> i;
+                    cout << "try again" << endl;
+                    cin >> i;
                 }while(i>(matrix.line)-1);
             }
-            std::cout << "enter column number" << std::endl;
-            std::cin >> j;
+            cout << "enter column number" << endl;
+            cin >> j;
             if(j>(matrix.column)-1){
                 do{
-                    std::cout << "try again" << std::endl;
-                    std::cin >> j;
+                    cout << "try again" << endl;
+                    cin >> j;
                 }while(j>(matrix.column)-1);
             }
             item = NewItem(val, i, j);
@@ -327,22 +329,22 @@ void Print2(Matrix matrix){
                 s = 0;
                 node = line->head;
                 while(node!=nullptr){
-                    std::cout << node->value << " ";
+                    cout << node->value << " ";
                     s = s+1;
                     node = node->next;
                 }
                 for(k=0;k<(j-s);k++){
-                    std::cout << "0 ";
+                    cout << "0 ";
                 }
-                std::cout << std::endl;
+                cout << endl;
             }
             line = line->next;
         }
         if(f==0){
             for(k=0;k<j;k++){
-                std::cout << "0 ";
+                cout << "0 ";
             }
-            std::cout << std::endl;
+            cout << endl;
         }
     }
 }
