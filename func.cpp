@@ -154,8 +154,20 @@ Matrix Input(Matrix matrix){
         if(val!=0){
             std::cout << "enter line number" << std::endl;
             std::cin >> i;
+            if(i>(matrix.line)-1){
+                do{
+                    std::cout << "try again" << std::endl;
+                    std::cin >> i;
+                }while(i>(matrix.line)-1);
+            }
             std::cout << "enter column number" << std::endl;
             std::cin >> j;
+            if(j>(matrix.column)-1){
+                do{
+                    std::cout << "try again" << std::endl;
+                    std::cin >> j;
+                }while(j>(matrix.column)-1);
+            }
             item = NewItem(val, i, j);
             head = matrix.head;
             maxi = matrix.maxi;
